@@ -79,40 +79,6 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
     super.initState();
   }
 
-  Widget _buildAnimation() {
-    return MaterialApp(
-      home: Stack(
-        clipBehavior: Clip.none,
-        alignment: Alignment.center,
-        children: [
-          Builder(
-            builder: (context) {
-              return Container(
-                alignment: Alignment.center,
-                constraints: BoxConstraints.expand(),
-                color: Color(0xff005FFF),
-                child: SizedBox(),
-              );
-              ;
-            },
-          ),
-          Builder(
-            builder: (context) {
-              return Container(
-                width: 1.0,
-                height: 1.0,
-                decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(.7),
-                  shape: BoxShape.circle,
-                ),
-              );
-            },
-          ),
-        ],
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -154,6 +120,7 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
               initialRoute: _initData!.client.state.user == null
                   ? Routes.CHOOSE_USER
                   : Routes.HOME,
+              debugShowCheckedModeBanner: false,
             ),
           ),
       ],
